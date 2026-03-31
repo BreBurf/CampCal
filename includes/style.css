@@ -1,0 +1,122 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #d9d9d9;
+  padding: 15px 30px;
+}
+
+.navbar nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+}
+
+/* LAYOUT */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: #e5e5e5;
+  padding: 15px;
+}
+
+.event-card {
+  background: white;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+/* CALENDAR */
+.calendar-section {
+  background: #e5e5e5;
+  padding: 15px;
+}
+
+.calendar-box {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.day {
+  height: 40px;
+  background: #ddd;
+}
+
+.day.active {
+  background: teal;
+}
+
+/* EVENTS LIST */
+.event-row {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.no-events {
+  text-align: center;
+  padding: 10px;
+  color: gray;
+}
+
+/* PROFILE */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: #e5e5e5;
+  padding: 15px;
+}
+
+/* SIGNUP */
+.signup-box {
+  width: 300px;
+  background: #e5e5e5;
+  padding: 20px;
+  border: 3px solid #4a90e2;
+}
+
+.signup-box input,
+.signup-box select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}

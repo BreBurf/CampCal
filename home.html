@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>CampCal</title>
+    <link rel="stylesheet" href="includes/style.css" />
+</head>
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">CampCal</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="home.html">Calendar</a>
+            <a href="#">Create Event</a>
+            <a href="profile.html">User Profile</a>
+        </nav>
+        <div class="user"><a href="profile.html">Welcome, Schall</a></div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- LEFT: EVENTS -->
+        <aside class="sidebar">
+        <h2>Upcoming Events</h2>
+
+        <div class="event-card">
+            <div class="event-header">
+            <span>Tennis Meetup</span>
+            <span>March 10, 2:00pm</span>
+            </div>
+            <p>Come meet up with us at the Liberty Tennis Courts, play a couple games!</p>
+        </div>
+
+        <div class="event-card">
+            <div class="event-header">
+            <span>Julia’s Birthday</span>
+            <span>March 26, 5:00pm</span>
+            </div>
+            <p>There'll be free cake if you go! Promise!</p>
+        </div>
+
+        <div class="event-card">
+            <div class="event-header">
+            <span>Party at the Hill</span>
+            <span>March 26, 8:13pm</span>
+            </div>
+            <p>WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</p>
+        </div>
+
+        </aside>
+
+        <!-- RIGHT: CALENDAR -->
+        <main class="calendar-section">
+        <h2>Your Calendar</h2>
+
+        <div class="calendar-box">
+            <div class="calendar-header">
+            <button>&lt;</button>
+            <span>March</span>
+            <button>&gt;</button>
+            </div>
+
+            <div class="calendar-grid">
+            <!-- 35 squares -->
+            <div class="day"></div>
+            <div class="day"></div>
+            <div class="day active"></div>
+            <div class="day"></div>
+            <div class="day"></div>
+            <!-- repeat... -->
+            </div>
+        </div>
+
+        <div class="selected-day">
+            <h3>Selected Day: March 26</h3>
+
+            <div class="event-row">
+            <span>Julia’s Birthday</span>
+            <span>5:00pm Demoss</span>
+            </div>
+
+            <div class="event-row">
+            <span>Party at the Hill</span>
+            <span>8:13pm Hill</span>
+            </div>
+
+            <div class="no-events">No more events...</div>
+        </div>
+        </main>
+
+    </div>
+</body>
+</html>
