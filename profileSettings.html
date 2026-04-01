@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CampCal | Profile Settings</title>
+    <link rel="stylesheet" href="includes/style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">CampCal</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="home.html">Calendar</a>
+            <a href="#">Create Event</a>
+            <a href="profileSettings.html">User Profile</a>
+        </nav>
+        <div class="user"><a href="profilePreferences.html">Preferences</a></div>
+    </header>
+
+    <main class="profile-settings-shell">
+        <section class="profile-form-panel">
+            <h1>Complete Profile</h1>
+
+            <label for="first-name">First name</label>
+            <input id="first-name" type="text" placeholder="John" />
+
+            <label for="last-name">Last name</label>
+            <input id="last-name" type="text" placeholder="Smith" />
+
+            <label for="phone">Phone Number</label>
+            <input id="phone" type="text" placeholder="(434) 123-4567" />
+
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="example@email.com" />
+
+            <label for="college">College</label>
+            <select id="college">
+                <option>Liberty University</option>
+                <option>University of Virginia</option>
+                <option>Virginia Tech</option>
+            </select>
+
+            <button class="profile-submit">Save Profile</button>
+            <a class="profile-secondary-link" href="profilePreferences.html">Go to Profile Preferences</a>
+        </section>
+
+        <section class="profile-calendar-panel">
+            <h2>Liberty University Calendar</h2>
+
+            <div class="calendar-box profile-calendar-box">
+                <div class="calendar-header">
+                    <button type="button" aria-label="Previous month">&lt;</button>
+                    <span>March</span>
+                    <button type="button" aria-label="Next month">&gt;</button>
+                </div>
+
+                <div class="calendar-grid profile-calendar-grid">
+                    <div class="day dot-orange"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day dot-red"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day dot-yellow"></div>
+
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day active dot-yellow"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day"></div>
+                    <div class="day dot-green"></div>
+                </div>
+            </div>
+
+            <div class="selected-day profile-selected-day">
+                <h3>Selected Day: March 26</h3>
+
+                <div class="event-row">
+                    <span>Julia's Birthday</span>
+                    <span>5:00pm Demoss</span>
+                </div>
+
+                <div class="event-row">
+                    <span>Party at the Hill</span>
+                    <span>8:13pm Hill</span>
+                </div>
+
+                <div class="no-events">No more events...</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
