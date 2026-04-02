@@ -15,7 +15,7 @@
             <a href="eventCreation.html">Create Event</a>
             <a href="profileSettings.html">User Profile</a>
         </nav>
-        <div class="user"><a href="profileSettings.html">Welcome, Schall</a></div>
+        <div class="user"><a href="profileSettings.html">Welcome </a></div>
     </header>
 
     <!-- MAIN CONTENT -->
@@ -119,5 +119,17 @@
         </main>
 
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedName = localStorage.getItem('campCalUser');
+            const userLink = document.querySelector('.user a');
+
+            if (savedName && userLink) {
+                // This replaces the hardcoded "Welcome, Schall"
+                userLink.textContent = `Welcome, ${savedName}`;
+            }
+        });
+    </script>
 </body>
 </html>

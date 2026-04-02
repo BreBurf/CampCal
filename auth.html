@@ -50,20 +50,37 @@
     </main>
 
     <script>
+        // Tab switching logic (keep your existing code)
         const tabs = document.querySelectorAll('.auth-tab');
         const forms = document.querySelectorAll('.auth-form');
 
         tabs.forEach((tab) => {
             tab.addEventListener('click', () => {
                 const targetId = tab.dataset.target;
-
                 tabs.forEach((currentTab) => currentTab.classList.remove('active'));
                 forms.forEach((form) => form.classList.remove('active'));
-
                 tab.classList.add('active');
                 document.getElementById(targetId).classList.add('active');
             });
         });
+
+        // --- NEW: SESSION PERSISTENCE LOGIC ---
+        
+        // Handle Login Form
+        document.getElementById('login-form').addEventListener('submit', function(e) {
+            const email = document.getElementById('login-email').value;
+            // For login, we can use the part of the email before the '@' as a temporary name
+            const displayName = email.split('@')[0]; 
+            localStorage.setItem('campCalUser', displayName);
+        });
+
+        // Handle New User Form
+        document.getElementById('new-user-form').addEventListener('submit', function(e) {
+            const fullName = document.getElementById('new-name').value;
+            // Save the actual name provided
+            localStorage.setItem('campCalUser', fullName);
+        });
     </script>
 </body>
 </html>
+

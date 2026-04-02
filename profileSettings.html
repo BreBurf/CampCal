@@ -115,5 +115,18 @@
             </div>
         </section>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedName = localStorage.getItem('campCalUser');
+            const userLink = document.querySelector('.user a');
+
+            if (savedName && userLink) {
+                // This replaces the hardcoded "Welcome, Schall"
+                userLink.textContent = `Welcome, ${savedName}`;
+            }
+        });
+    </script>
+    
 </body>
 </html>
