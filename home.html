@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <title>CampCal</title>
     <link rel="stylesheet" href="includes/style.css" />
+    <script type="module" src="src/eventList.js" defer></script>
+    <script type="module" src="src/calLibrary.js" defer></script>
 </head>
 <body>
     <!-- NAVBAR -->
@@ -23,32 +25,8 @@
 
         <!-- LEFT: EVENTS -->
         <aside class="sidebar">
-        <h2>Upcoming Events</h2>
-
-        <div class="event-card">
-            <div class="event-header">
-            <span>Tennis Meetup</span>
-            <span>March 10, 2:00pm</span>
-            </div>
-            <p>Come meet up with us at the Liberty Tennis Courts, play a couple games!</p>
-        </div>
-
-        <div class="event-card">
-            <div class="event-header">
-            <span>Julia’s Birthday</span>
-            <span>March 26, 5:00pm</span>
-            </div>
-            <p>There'll be free cake if you go! Promise!</p>
-        </div>
-
-        <div class="event-card">
-            <div class="event-header">
-            <span>Party at the Hill</span>
-            <span>March 26, 8:13pm</span>
-            </div>
-            <p>WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</p>
-        </div>
-
+            <h2>Upcoming Events</h2>
+            <div class="event-list"></div>
         </aside>
 
         <!-- RIGHT: CALENDAR -->

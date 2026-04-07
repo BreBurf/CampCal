@@ -1,0 +1,607 @@
+{
+    "events": [
+        {
+        "id": 1,
+        "title": "Tennis Meetup",
+        "date": "2026-03-10",
+        "time": "14:00",
+        "location": "Liberty Tennis Courts",
+        "description": "Come meet up with us at the Liberty Tennis Courts, play a couple games!",
+        "category": "sports",
+        "tags": ["tennis", "outdoor", "fitness", "social"]
+        },
+        {
+        "id": 2,
+        "title": "Basketball Pickup Game",
+        "date": "2026-03-11",
+        "time": "18:00",
+        "location": "Campus Recreation Center",
+        "description": "Join us for a casual pickup basketball game. All skill levels welcome!",
+        "category": "sports",
+        "tags": ["basketball", "indoor", "fitness", "team"]
+        },
+        {
+        "id": 3,
+        "title": "Yoga in the Park",
+        "date": "2026-03-12",
+        "time": "09:00",
+        "location": "Riverside Park",
+        "description": "Start your morning with a relaxing yoga session.",
+        "category": "wellness",
+        "tags": ["yoga", "outdoor", "relaxation", "health"]
+        },
+        {
+        "id": 4,
+        "title": "Study Group: Calculus I",
+        "date": "2026-03-12",
+        "time": "19:00",
+        "location": "Library Room 201",
+        "description": "Collaborative study session for upcoming calculus exam.",
+        "category": "academic",
+        "tags": ["study", "math", "collaboration", "exam-prep"]
+        },
+        {
+        "id": 5,
+        "title": "Computer Science Club Meeting",
+        "date": "2026-03-13",
+        "time": "17:00",
+        "location": "Engineering Hall 105",
+        "description": "Weekly meeting to discuss projects and tech topics.",
+        "category": "academic",
+        "tags": ["technology", "coding", "club", "networking"]
+        },
+
+        {
+        "id": 6,
+        "title": "Open Mic Night",
+        "date": "2026-03-13",
+        "time": "20:00",
+        "location": "Student Center Lounge",
+        "description": "Show off your talents—music, poetry, comedy, and more!",
+        "category": "social",
+        "tags": ["music", "performance", "creative", "nightlife"]
+        },
+        {
+        "id": 7,
+        "title": "Art Club Workshop",
+        "date": "2026-03-14",
+        "time": "15:00",
+        "location": "Fine Arts Building",
+        "description": "Hands-on painting workshop with guest artist.",
+        "category": "creative",
+        "tags": ["art", "painting", "workshop", "hands-on"]
+        },
+        {
+        "id": 8,
+        "title": "Movie Night: Classic Films",
+        "date": "2026-03-14",
+        "time": "21:00",
+        "location": "Auditorium A",
+        "description": "Enjoy a screening of a beloved classic film.",
+        "category": "social",
+        "tags": ["movie", "film", "entertainment", "night"]
+        },
+        {
+        "id": 9,
+        "title": "Campus Cleanup Day",
+        "date": "2026-03-15",
+        "time": "10:00",
+        "location": "Main Quad",
+        "description": "Help keep campus clean and green.",
+        "category": "service",
+        "tags": ["volunteer", "environment", "community", "outdoor"]
+        },
+        {
+        "id": 10,
+        "title": "Career Fair",
+        "date": "2026-03-16",
+        "time": "11:00",
+        "location": "Conference Center",
+        "description": "Meet recruiters and explore job opportunities.",
+        "category": "career",
+        "tags": ["jobs", "networking", "internships", "professional"]
+        },
+
+        {
+        "id": 11,
+        "title": "Resume Workshop",
+        "date": "2026-03-16",
+        "time": "14:00",
+        "location": "Career Services Office",
+        "description": "Improve your resume with expert guidance.",
+        "category": "career",
+        "tags": ["resume", "career", "workshop", "professional"]
+        },
+        {
+        "id": 12,
+        "title": "Hackathon Kickoff",
+        "date": "2026-03-17",
+        "time": "18:00",
+        "location": "Innovation Lab",
+        "description": "Start of the 24-hour coding competition.",
+        "category": "academic",
+        "tags": ["coding", "competition", "technology", "innovation"]
+        },
+        {
+        "id": 13,
+        "title": "Chess Club Tournament",
+        "date": "2026-03-17",
+        "time": "16:00",
+        "location": "Student Union",
+        "description": "Compete in our weekly chess tournament.",
+        "category": "social",
+        "tags": ["chess", "games", "strategy", "competition"]
+        },
+        {
+        "id": 14,
+        "title": "Photography Walk",
+        "date": "2026-03-18",
+        "time": "17:30",
+        "location": "Campus Grounds",
+        "description": "Capture beautiful campus scenes.",
+        "category": "creative",
+        "tags": ["photography", "outdoor", "art", "walking"]
+        },
+        {
+        "id": 15,
+        "title": "Debate Club Meeting",
+        "date": "2026-03-18",
+        "time": "19:00",
+        "location": "Humanities Hall",
+        "description": "Engage in lively discussions and debates.",
+        "category": "academic",
+        "tags": ["debate", "discussion", "public-speaking", "club"]
+        },
+
+        {
+        "id": 16,
+        "title": "Volleyball Tournament",
+        "date": "2026-03-19",
+        "time": "15:00",
+        "location": "Recreation Center",
+        "description": "Team-based volleyball competition.",
+        "category": "sports",
+        "tags": ["volleyball", "team", "competition", "fitness"]
+        },
+        {
+        "id": 17,
+        "title": "Book Club Discussion",
+        "date": "2026-03-19",
+        "time": "18:30",
+        "location": "Library Lounge",
+        "description": "Discuss this month’s selected book.",
+        "category": "academic",
+        "tags": ["books", "reading", "discussion", "literature"]
+        },
+        {
+        "id": 18,
+        "title": "Cooking Class",
+        "date": "2026-03-20",
+        "time": "17:00",
+        "location": "Dining Hall Kitchen",
+        "description": "Learn to cook simple, healthy meals.",
+        "category": "lifestyle",
+        "tags": ["cooking", "food", "skills", "health"]
+        },
+        {
+        "id": 19,
+        "title": "Gaming Tournament",
+        "date": "2026-03-20",
+        "time": "20:00",
+        "location": "Esports Arena",
+        "description": "Compete in popular multiplayer games.",
+        "category": "social",
+        "tags": ["gaming", "esports", "competition", "multiplayer"]
+        },
+        {
+        "id": 20,
+        "title": "Outdoor Movie Night",
+        "date": "2026-03-21",
+        "time": "20:30",
+        "location": "Campus Lawn",
+        "description": "Watch a movie under the stars.",
+        "category": "social",
+        "tags": ["movie", "outdoor", "entertainment", "night"]
+        },
+        {
+            "id": 21,
+            "title": "Spring Yoga Session",
+            "date": "2026-03-25",
+            "time": "07:00",
+            "location": "Campus Garden",
+            "description": "Start your day with a refreshing yoga session.",
+            "category": "wellness",
+            "tags": ["yoga", "health", "outdoor", "morning"]
+        },
+        {
+            "id": 22,
+            "title": "Campus Art Fair",
+            "date": "2026-03-28",
+            "time": "12:00",
+            "location": "Student Center",
+            "description": "Explore art created by local and student artists.",
+            "category": "arts",
+            "tags": ["art", "exhibition", "fair", "creative"]
+        },
+        {
+            "id": 23,
+            "title": "Poetry Slam Night",
+            "date": "2026-03-30",
+            "time": "19:00",
+            "location": "Library Auditorium",
+            "description": "Enjoy an evening of spoken word performances.",
+            "category": "arts",
+            "tags": ["poetry", "performance", "literature", "night"]
+        },
+        {
+            "id": 24,
+            "title": "Spring Hike Adventure",
+            "date": "2026-04-03",
+            "time": "09:00",
+            "location": "Hillside Trail",
+            "description": "Join us for a group hike and enjoy nature.",
+            "category": "outdoor",
+            "tags": ["hike", "nature", "exercise", "adventure"]
+        },
+        {
+            "id": 25,
+            "title": "Campus Farmers Market",
+            "date": "2026-04-05",
+            "time": "10:00",
+            "location": "Main Quad",
+            "description": "Fresh local produce and handmade goods every week.",
+            "category": "community",
+            "tags": ["market", "food", "local", "weekend"]
+        },
+        {
+            "id": 26,
+            "title": "Open Mic Night",
+            "date": "2026-04-08",
+            "time": "20:00",
+            "location": "Student Lounge",
+            "description": "Show off your talent in music, comedy, or poetry.",
+            "category": "social",
+            "tags": ["open mic", "talent", "music", "entertainment"]
+        },
+        {
+            "id": 27,
+            "title": "Gardening Workshop",
+            "date": "2026-04-10",
+            "time": "15:00",
+            "location": "Campus Garden",
+            "description": "Learn how to plant and care for spring flowers.",
+            "category": "education",
+            "tags": ["gardening", "plants", "workshop", "hands-on"]
+        },
+        {
+            "id": 28,
+            "title": "Spring Concert",
+            "date": "2026-04-12",
+            "time": "18:30",
+            "location": "Campus Auditorium",
+            "description": "Enjoy live performances by student bands.",
+            "category": "music",
+            "tags": ["concert", "live music", "performance", "entertainment"]
+        },
+        {
+            "id": 29,
+            "title": "Trivia Night",
+            "date": "2026-04-15",
+            "time": "19:30",
+            "location": "Campus Cafe",
+            "description": "Test your knowledge and win prizes.",
+            "category": "social",
+            "tags": ["trivia", "game", "fun", "competition"]
+        },
+        {
+            "id": 30,
+            "title": "Photography Walk",
+            "date": "2026-04-17",
+            "time": "16:00",
+            "location": "Campus Trail",
+            "description": "Capture the beauty of spring on campus.",
+            "category": "arts",
+            "tags": ["photography", "walk", "nature", "creative"]
+        },
+        {
+            "id": 31,
+            "title": "Volunteer Cleanup Day",
+            "date": "2026-04-20",
+            "time": "09:00",
+            "location": "Campus Park",
+            "description": "Help keep our campus clean and green.",
+            "category": "community",
+            "tags": ["volunteer", "cleanup", "environment", "community"]
+        },
+        {
+            "id": 32,
+            "title": "Board Game Night",
+            "date": "2026-04-22",
+            "time": "18:00",
+            "location": "Student Lounge",
+            "description": "Play board games and meet new friends.",
+            "category": "social",
+            "tags": ["board games", "fun", "games", "evening"]
+        },
+        {
+            "id": 33,
+            "title": "Spring Dance Party",
+            "date": "2026-04-25",
+            "time": "21:00",
+            "location": "Campus Ballroom",
+            "description": "Dance the night away with friends.",
+            "category": "social",
+            "tags": ["dance", "party", "music", "nightlife"]
+        },
+        {
+            "id": 34,
+            "title": "Cooking Class: Spring Recipes",
+            "date": "2026-04-27",
+            "time": "14:00",
+            "location": "Campus Kitchen",
+            "description": "Learn to make delicious seasonal dishes.",
+            "category": "education",
+            "tags": ["cooking", "food", "class", "hands-on"]
+        },
+        {
+            "id": 35,
+            "title": "Student Film Screening",
+            "date": "2026-04-29",
+            "time": "19:00",
+            "location": "Campus Theater",
+            "description": "Watch original films made by students.",
+            "category": "arts",
+            "tags": ["film", "screening", "student work", "entertainment"]
+        },
+        {
+            "id": 36,
+            "title": "Spring Sports Tournament",
+            "date": "2026-05-02",
+            "time": "10:00",
+            "location": "Campus Sports Field",
+            "description": "Compete in soccer, basketball, and more.",
+            "category": "sports",
+            "tags": ["sports", "tournament", "competition", "outdoor"]
+        },
+        {
+            "id": 37,
+            "title": "Mindfulness Meditation",
+            "date": "2026-05-05",
+            "time": "08:00",
+            "location": "Meditation Hall",
+            "description": "Relax and focus your mind for the day.",
+            "category": "wellness",
+            "tags": ["meditation", "mindfulness", "health", "relaxation"]
+        },
+        {
+            "id": 38,
+            "title": "Campus Talent Show",
+            "date": "2026-05-08",
+            "time": "18:00",
+            "location": "Campus Auditorium",
+            "description": "Showcase your talent or cheer on your friends.",
+            "category": "social",
+            "tags": ["talent", "performance", "show", "fun"]
+        },
+        {
+            "id": 39,
+            "title": "Spring Book Fair",
+            "date": "2026-05-12",
+            "time": "11:00",
+            "location": "Library Lobby",
+            "description": "Browse and buy books from local authors and vendors.",
+            "category": "education",
+            "tags": ["books", "fair", "reading", "literature"]
+        },
+        {
+            "id": 40,
+            "title": "Outdoor Jazz Evening",
+            "date": "2026-05-15",
+            "time": "19:30",
+            "location": "Campus Lawn",
+            "description": "Enjoy live jazz music under the stars.",
+            "category": "music",
+            "tags": ["jazz", "outdoor", "music", "night"]
+        },
+        {
+            "id": 41,
+            "title": "Spring Nature Walk",
+            "date": "2026-04-18",
+            "time": "09:30",
+            "location": "Botanical Garden",
+            "description": "Discover blooming flowers and seasonal wildlife on a guided walk.",
+            "category": "outdoor",
+            "tags": ["nature", "walk", "spring", "education"]
+        },
+        {
+            "id": 42,
+            "title": "Campus Chess Tournament",
+            "date": "2026-04-19",
+            "time": "14:00",
+            "location": "Student Lounge",
+            "description": "Challenge friends in a fun chess competition.",
+            "category": "games",
+            "tags": ["chess", "competition", "strategy", "indoor"]
+        },
+        {
+            "id": 43,
+            "title": "Spring Poetry Workshop",
+            "date": "2026-04-21",
+            "time": "16:00",
+            "location": "Library Study Room",
+            "description": "Learn techniques for writing seasonal poetry.",
+            "category": "arts",
+            "tags": ["poetry", "writing", "workshop", "creative"]
+        },
+        {
+            "id": 44,
+            "title": "Outdoor Fitness Bootcamp",
+            "date": "2026-04-23",
+            "time": "07:00",
+            "location": "Campus Field",
+            "description": "High-energy fitness session for all levels.",
+            "category": "wellness",
+            "tags": ["fitness", "exercise", "bootcamp", "outdoor"]
+        },
+        {
+            "id": 45,
+            "title": "Spring Craft Fair",
+            "date": "2026-04-24",
+            "time": "11:00",
+            "location": "Student Center Courtyard",
+            "description": "Shop handmade crafts by local artisans.",
+            "category": "community",
+            "tags": ["crafts", "fair", "shopping", "creative"]
+        },
+        {
+            "id": 46,
+            "title": "Campus Comedy Night",
+            "date": "2026-04-26",
+            "time": "20:00",
+            "location": "Campus Theater",
+            "description": "Laugh along with student and local comedians.",
+            "category": "social",
+            "tags": ["comedy", "fun", "performance", "night"]
+        },
+        {
+            "id": 47,
+            "title": "Cooking Demo: Healthy Snacks",
+            "date": "2026-04-28",
+            "time": "13:00",
+            "location": "Campus Kitchen",
+            "description": "Learn to make quick and healthy snack recipes.",
+            "category": "education",
+            "tags": ["cooking", "health", "demo", "food"]
+        },
+        {
+            "id": 48,
+            "title": "Campus Talent Showcase",
+            "date": "2026-04-30",
+            "time": "18:30",
+            "location": "Campus Auditorium",
+            "description": "Students showcase singing, dancing, and acting talent.",
+            "category": "social",
+            "tags": ["talent", "performance", "showcase", "entertainment"]
+        },
+        {
+            "id": 49,
+            "title": "Sunset Photography Session",
+            "date": "2026-05-01",
+            "time": "19:00",
+            "location": "Campus Rooftop",
+            "description": "Capture stunning sunset views with guidance from a pro photographer.",
+            "category": "arts",
+            "tags": ["photography", "sunset", "workshop", "creative"]
+        },
+        {
+            "id": 50,
+            "title": "Student Debate Competition",
+            "date": "2026-05-03",
+            "time": "15:00",
+            "location": "Lecture Hall B",
+            "description": "Watch students debate current issues in a friendly competition.",
+            "category": "education",
+            "tags": ["debate", "competition", "students", "learning"]
+        },
+        {
+            "id": 51,
+            "title": "Campus Spring Picnic",
+            "date": "2026-05-05",
+            "time": "12:00",
+            "location": "Main Quad",
+            "description": "Bring your friends and enjoy games, food, and sunshine.",
+            "category": "social",
+            "tags": ["picnic", "outdoor", "food", "fun"]
+        },
+        {
+            "id": 52,
+            "title": "Evening Jazz Jam",
+            "date": "2026-05-06",
+            "time": "18:30",
+            "location": "Campus Lounge",
+            "description": "Local jazz musicians play live in a cozy setting.",
+            "category": "music",
+            "tags": ["jazz", "live music", "evening", "entertainment"]
+        },
+        {
+            "id": 53,
+            "title": "Spring Eco Workshop",
+            "date": "2026-05-08",
+            "time": "10:00",
+            "location": "Campus Greenhouse",
+            "description": "Learn eco-friendly practices and sustainability tips.",
+            "category": "education",
+            "tags": ["environment", "workshop", "sustainability", "green"]
+        },
+        {
+            "id": 54,
+            "title": "Outdoor Volleyball Match",
+            "date": "2026-05-10",
+            "time": "16:00",
+            "location": "Campus Sports Court",
+            "description": "Join or watch a friendly volleyball game.",
+            "category": "sports",
+            "tags": ["volleyball", "sports", "outdoor", "team"]
+        },
+        {
+            "id": 55,
+            "title": "Mindfulness Workshop",
+            "date": "2026-05-12",
+            "time": "09:00",
+            "location": "Meditation Room",
+            "description": "Techniques for reducing stress and improving focus.",
+            "category": "wellness",
+            "tags": ["mindfulness", "workshop", "relaxation", "health"]
+        },
+        {
+            "id": 56,
+            "title": "Spring Film Night",
+            "date": "2026-05-14",
+            "time": "20:00",
+            "location": "Campus Theater",
+            "description": "Watch a popular spring-themed movie outdoors.",
+            "category": "social",
+            "tags": ["movie", "outdoor", "entertainment", "night"]
+        },
+        {
+            "id": 57,
+            "title": "Campus Science Expo",
+            "date": "2026-05-17",
+            "time": "11:00",
+            "location": "Science Building Lobby",
+            "description": "Explore student science projects and experiments.",
+            "category": "education",
+            "tags": ["science", "expo", "students", "learning"]
+        },
+        {
+            "id": 58,
+            "title": "Campus Choir Performance",
+            "date": "2026-05-19",
+            "time": "18:30",
+            "location": "Auditorium",
+            "description": "Enjoy an evening of choral music by the campus choir.",
+            "category": "music",
+            "tags": ["choir", "performance", "music", "evening"]
+        },
+        {
+            "id": 59,
+            "title": "Student Art Gallery Opening",
+            "date": "2026-05-22",
+            "time": "17:00",
+            "location": "Art Hall",
+            "description": "Opening night for student-created art exhibitions.",
+            "category": "arts",
+            "tags": ["art", "exhibition", "students", "creative"]
+        },
+        {
+            "id": 60,
+            "title": "End-of-May Bash",
+            "date": "2026-05-30",
+            "time": "20:00",
+            "location": "Campus Lawn",
+            "description": "Celebrate the end of May with music, food, and fun activities.",
+            "category": "social",
+            "tags": ["party", "music", "food", "celebration"]
+        }
+    ]
+}
