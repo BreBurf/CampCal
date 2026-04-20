@@ -221,6 +221,72 @@ body {
   background: transparent;
 }
 
+/* SEARCH */
+.filters {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+.filters label {
+  display: block;
+  margin-top: 10px;
+}
+.event {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
+
+#tagFilters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.tag-option {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background-color: #f1f5f9;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    input {
+      margin-right: 10px;
+    }
+}
+
+.tag-option:hover {
+    background-color: #e2e8f0;
+}
+
+.tag-option input {
+    margin: 0;
+    cursor: pointer;
+}
+
+#applyFilters {
+    margin-top: 15px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #4f46e5;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#applyFilters:hover {
+    background-color: #4338ca;
+}
+
 /* SIGNUP */
 .signup-box {
 @media (max-width: 700px) {

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Creation</title>
+    <link rel="stylesheet" href="includes/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">CampCal</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="home.html">Calendar</a>
+            <a href="search.html">Search</a>
+            <a href="eventCreation.html">Create Event</a>
+            <a href="leaderboard.html">Leaderboard</a>
+            <a href="profileSettings.html">User Profile</a>
+        </nav>
+        <div class="user"><a href="auth.html">Log In</a></div>
+    </header>
+
+    <h1>Search Campus Events</h1>
+
+    <div class="filters">
+        <label>
+            Title:
+            <input type="text" id="titleSearch">
+        </label>
+
+        <label>
+            Description:
+            <input type="text" id="descSearch">
+        </label>
+
+        <label>
+            Category:
+            <select id="categoryFilter">
+                <option value="">All</option>
+            </select>
+        </label>
+
+        <label>
+            Tags:
+            <div id="tagFilters"></div>
+        </label>
+
+        <label>
+            Start Date:
+            <input type="date" id="startDate">
+        </label>
+
+        <label>
+            End Date:
+            <input type="date" id="endDate">
+        </label>
+
+        <button id="applyFilters">Apply Filters</button>
+    </div>
+
+    <h2>Results</h2>
+    <div id="results"></div>
+
+    <script src="src/gamification.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let allEvents = []
+
+            if (window.CampCalGamification) {
+                window.CampCalGamification.init();
+            }
+
+            const savedName = localStorage.getItem('campCalUser');
+            const userLink = document.querySelector('.user a');
+
+            if (window.CampCalGamification) {
+                window.CampCalGamification.applyNavbarUserLink(userLink, savedName);
+            }
+
+            async function loadAllEvents() {
+                try {
+                    const response = await fetch('events.json');
+                    const jsonData = await response.json();
+
+                    const starterEvents = jsonData.events || [];
+                    const createdEvents = JSON.parse(localStorage.getItem('campCalCreatedEvents')) || [];
+
+                    return [...starterEvents, ...createdEvents];
+                } catch (error) {
+                    console.error('Failed to load events.json:', error);
+                    const createdEvents = JSON.parse(localStorage.getItem('campCalCreatedEvents')) || [];
+                    return [...createdEvents];
+                }
+            }
+
+            function formatReadableDate(dateStr) {
+                const dateObj = new Date(`${dateStr}T00:00:00`);
+                return dateObj.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    month: 'long',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
+
+            function formatTime(timeStr) {
+                if (!timeStr) return '';
+                const [hourStr, minute] = timeStr.split(':');
+                let hour = parseInt(hourStr, 10);
+                const ampm = hour >= 12 ? 'PM' : 'AM';
+                hour = hour % 12 || 12;
+                return `${hour}:${minute} ${ampm}`;
+            }
+
+            function getEventRsvpState(event) {
+                const currentUser = (savedName || '').trim();
+                const hasRsvped = window.CampCalGamification
+                    ? window.CampCalGamification.hasRsvped(event.id, currentUser)
+                    : false;
+                const attendeeCount = window.CampCalGamification
+                    ? window.CampCalGamification.getRsvpCount(event.id)
+                    : 0;
+                const isHostedByUser = currentUser && event.createdBy && event.createdBy === currentUser;
+
+                return {
+                    attendeeCount,
+                    hasRsvped,
+                    isHostedByUser,
+                    buttonLabel: !currentUser
+                        ? 'Log in to RSVP'
+                        : hasRsvped
+                            ? "RSVP'd"
+                            : isHostedByUser
+                                ? 'Join your event'
+                                : 'RSVP',
+                    buttonDisabled: Boolean(currentUser && hasRsvped)
+                };
+            }
+
+            function handleRsvpClick(eventId) {
+                if (!window.CampCalGamification) {
+                    return;
+                }
+
+                const currentUser = (savedName || '').trim();
+                if (!currentUser) {
+                    window.location.href = 'auth.html';
+                    return;
+                }
+
+                const eventData = allEvents.find(event => String(event.id) === String(eventId));
+                if (!eventData) {
+                    return;
+                }
+
+                const result = window.CampCalGamification.rsvpEvent(eventData, currentUser);
+
+                if (!result.success && result.duplicate) {
+                    renderUpcomingEvents();
+                    renderSelectedDay(selectedDateStr);
+                    renderCalendar();
+                    return;
+                }
+
+                if (!result.success) {
+                    alert(result.reason || 'Could not RSVP to this event.');
+                    return;
+                }
+
+                filterEvents();
+            }
+
+            function wireRsvpButtons(scopeElement) {
+                scopeElement.querySelectorAll('.rsvp-btn[data-event-id]').forEach(button => {
+                    button.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                        handleRsvpClick(button.dataset.eventId);
+                    });
+                });
+            }
+
+            function filterEvents() {
+                const titleVal = document.getElementById("titleSearch").value.toLowerCase();
+                const descVal = document.getElementById("descSearch").value.toLowerCase();
+                const categoryVal = document.getElementById("categoryFilter").value;
+                const startDate = document.getElementById("startDate").value;
+                const endDate = document.getElementById("endDate").value;
+
+                const selectedTags = [...document.querySelectorAll("#tagFilters input:checked")].map(cb => cb.value);
+
+                const filtered = allEvents.filter(event => {
+                    const matchesTitle = event.title.toLowerCase().includes(titleVal);
+                    const matchesDesc = event.description.toLowerCase().includes(descVal);
+                    const matchesCategory = !categoryVal || event.category === categoryVal;
+
+                    const matchesTags = selectedTags.length === 0 ||
+                        selectedTags.every(tag => event.tags.includes(tag));
+
+                    const eventDate = event.date;
+                    const matchesStart = !startDate || eventDate >= startDate;
+                    const matchesEnd = !endDate || eventDate <= endDate;
+
+                    return matchesTitle &&
+                        matchesDesc &&
+                        matchesCategory &&
+                        matchesTags &&
+                        matchesStart &&
+                        matchesEnd;
+                });
+
+                displayResults(filtered);
+            }
+
+            function displayResults(events) {
+                const resultsDiv = document.getElementById("results");
+                resultsDiv.innerHTML = "";
+
+                if (events.length === 0) {
+                    resultsDiv.innerHTML = "<p>No events found.</p>";
+                    return;
+                }
+
+                events.forEach(event => {
+                    const div = document.createElement("div");
+                    div.className = "event";
+                    const rsvpState = getEventRsvpState(event);
+                    div.innerHTML = `
+                        <div class="event-card event-card-gamified">
+                            <div class="event-header">
+                                <span>${event.title}</span>
+                                <span>${formatTime(event.time)}</span>
+                            </div>
+                            <div class="event-meta">${formatReadableDate(event.date)}</div>
+                            <div class="event-meta">${event.location}</div>
+
+                            <div class="event-card-footer">
+                                <span class="event-rsvp-count">${rsvpState.attendeeCount} ${rsvpState.attendeeCount === 1 ? 'RSVP' : 'RSVPs'}</span>
+                                <button
+                                    type="button"
+                                    class="rsvp-btn ${rsvpState.hasRsvped ? 'rsvp-btn-active' : ''}"
+                                    data-event-id="${event.id}"
+                                    ${rsvpState.buttonDisabled ? 'disabled' : ''}
+                                >${rsvpState.buttonLabel}</button>
+                            </div>
+                            ${event.createdBy && event.createdBy === savedName ? '<div class="event-host-badge">Hosted by you</div>' : ''}
+                        </div>
+                    `;
+
+                    wireRsvpButtons(div);
+                    resultsDiv.appendChild(div);
+                });
+            }
+
+            loadAllEvents().then(events => {
+                allEvents = events;
+
+                const categories = [...new Set(allEvents.map(e => e.category))];
+                const tags = [...new Set(allEvents.flatMap(e => e.tags))];
+
+                const categorySelect = document.getElementById("categoryFilter");
+                categories.forEach(cat => {
+                    const option = document.createElement("option");
+                    option.value = cat;
+                    option.textContent = cat;
+                    categorySelect.appendChild(option);
+                });
+
+                const tagContainer = document.getElementById("tagFilters");
+                tags.forEach(tag => {
+                    const label = document.createElement("label");
+                    label.className = "tag-option";
+
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.value = tag;
+
+                    const text = document.createElement("span");
+                    text.textContent = tag;
+
+                    label.appendChild(checkbox);
+                    label.appendChild(text);
+                    tagContainer.appendChild(label);
+                });
+
+                document.getElementById("applyFilters").addEventListener("click", filterEvents);
+
+                displayResults(allEvents);
+            });
+        });
+    </script>
+</body>
+</html>

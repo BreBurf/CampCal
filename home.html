@@ -12,6 +12,7 @@
         <nav>
             <a href="home.html">Home</a>
             <a href="home.html">Calendar</a>
+            <a href="search.html">Search</a>
             <a href="eventCreation.html">Create Event</a>
             <a href="leaderboard.html">Leaderboard</a>
             <a href="profileSettings.html">User Profile</a>
@@ -265,7 +266,7 @@
                         </div>
                         ${event.createdBy && event.createdBy === savedName ? '<div class="event-host-badge">Hosted by you</div>' : ''}
                     </div>
-                `;
+                    `;
                 }).join('');
 
                 wireRsvpButtons(upcomingEvents);

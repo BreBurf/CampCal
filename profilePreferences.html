@@ -57,12 +57,12 @@
     </style>
 </head>
 <body>
-
     <header class="navbar">
         <div class="logo">CampCal</div>
         <nav>
             <a href="home.html">Home</a>
             <a href="home.html">Calendar</a>
+            <a href="search.html">Search</a>
             <a href="eventCreation.html">Create Event</a>
             <a href="leaderboard.html">Leaderboard</a>
             <a href="profileSettings.html">User Profile</a>
@@ -137,7 +137,6 @@
             const profilePhone = document.getElementById('profilePhone');
             const profileCollege = document.getElementById('profileCollege');
 
-            // 🔥 Phone formatter (ADDED)
             function formatPhoneNumber(value) {
                 const digits = value.replace(/\D/g, '').substring(0, 10);
 
@@ -220,7 +219,6 @@
 
             const fullName = `${firstName} ${lastName}`.trim();
 
-            // 🔥 Format phone before display (FIX)
             const formattedPhone = formatPhoneNumber(phone);
 
             profileName.textContent = `Name: ${fullName || 'Not provided'}`;
