@@ -875,3 +875,113 @@ body.dark-theme .auth-box .auth-select {
     font-size: 0.72rem;
   }
 }
+
+@media (max-width: 768px) {
+  .navbar,
+  .marketing-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+
+  .navbar nav,
+  .marketing-nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    width: 100%;
+  }
+
+  .navbar a,
+  .marketing-nav a {
+    margin: 0;
+  }
+
+  .user {
+    width: 100%;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    padding: 12px;
+    gap: 14px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .event-creation-container {
+    margin: 20px 12px;
+    padding: 20px 16px;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .btn-link {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    background: #eee;
+  }
+
+  .auth-container {
+    height: auto;
+    min-height: calc(100vh - 80px);
+    padding: 20px 12px;
+    box-sizing: border-box;
+    align-items: flex-start;
+  }
+
+  .auth-box {
+    width: 100%;
+    max-width: 420px;
+    padding: 24px 18px;
+  }
+
+  .profile-settings-shell {
+    grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 18px;
+  }
+
+  .calendar-box {
+    padding: 10px;
+    overflow-x: auto;
+  }
+
+  .calendar-day {
+    min-height: 72px;
+    padding: 4px;
+  }
+
+  .calendar-day-number {
+    font-size: 0.85rem;
+  }
+
+  .event-chip {
+    font-size: 0.62rem;
+    padding: 2px 4px;
+  }
+
+  .event-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .profile-preferences-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
