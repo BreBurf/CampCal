@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="includes/style.css">
 </head>
 <body>
-
     <header class="navbar">
         <div class="logo">CampCal</div>
         <nav>
             <a href="home.html">Home</a>
             <a href="home.html">Calendar</a>
+            <a href="search.html">Search</a>
             <a href="eventCreation.html">Create Event</a>
+            <a href="leaderboard.html">Leaderboard</a>
             <a href="profileSettings.html">User Profile</a>
         </nav>
         <div class="user"><a href="auth.html">Log In</a></div>
@@ -117,22 +118,21 @@
         </form>
     </div>
 
+    <script src="src/gamification.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            if (window.CampCalGamification) {
+                window.CampCalGamification.init();
+            }
+
             const savedName = localStorage.getItem('campCalUser');
             const userLink = document.querySelector('.user a');
             const form = document.getElementById('eventForm');
             const formMessage = document.getElementById('formMessage');
             const cancelBtn = document.getElementById('cancelBtn');
 
-            if (userLink) {
-                if (savedName) {
-                    userLink.textContent = `Welcome, ${savedName}`;
-                    userLink.href = 'profilePreferences.html';
-                } else {
-                    userLink.textContent = 'Log In';
-                    userLink.href = 'auth.html';
-                }
+            if (window.CampCalGamification) {
+                window.CampCalGamification.applyNavbarUserLink(userLink, savedName);
             }
 
             cancelBtn.addEventListener('click', () => {
@@ -197,11 +197,19 @@
                     description,
                     category,
                     audience,
+                    createdBy: savedName || null,
                     tags: [category, audience]
                 };
 
                 storedEvents.push(newEvent);
                 localStorage.setItem('campCalCreatedEvents', JSON.stringify(storedEvents));
+
+                if (window.CampCalGamification) {
+                    window.CampCalGamification.awardAction('CREATE_EVENT', {
+                        eventId: newEvent.id,
+                        eventTitle: newEvent.title
+                    });
+                }
 
                 formMessage.textContent = 'Event created successfully!';
                 formMessage.className = 'form-message success';
